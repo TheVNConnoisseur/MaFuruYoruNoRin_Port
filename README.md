@@ -9,6 +9,7 @@ The aim of this project is to modernize to the best extent the framework of this
 
 - [ ] Mobile native port (NW.JS still has [no native Android/iOS support](https://github.com/Elanis/web-to-desktop-framework-comparison/#operating-systems-support))
 - [X] Obtain the non-minified version of all JS libraries
+- [ ] Store cookies in a folder next to the game files (the game uses a cookie inside LocalStorage to keep track of all the unlocked scenes and each of the save states)
 - [ ] Video playback support for [.ogv video files](https://en.wikipedia.org/wiki/Theora)
 
 ## Changes done

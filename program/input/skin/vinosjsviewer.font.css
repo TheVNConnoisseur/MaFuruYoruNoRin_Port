@@ -1,0 +1,12 @@
+/* noto-serif-regular - latin */
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/noto-serif-v7-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Noto Serif"), local("NotoSerif"), url("../fonts/noto-serif-v7-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/noto-serif-v7-latin-regular.woff2") format("woff2"), url("../fonts/noto-serif-v7-latin-regular.woff") format("woff"), url("../fonts/noto-serif-v7-latin-regular.ttf") format("truetype"), url("../fonts/noto-serif-v7-latin-regular.svg#NotoSerif") format("svg");
+  /* Legacy iOS */ }
+
+.vinos-player {
+  font-family: 'Noto Serif'; }

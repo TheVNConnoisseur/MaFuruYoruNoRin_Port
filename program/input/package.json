@@ -1,0 +1,8 @@
+{
+  "name": "魔降ル夜ノ凜 Animation",
+  "main": "vinosjsviewer.html",
+  "version": "1.0.0",
+  "window": {
+    "icon": "./icon.png"
+  }
+}

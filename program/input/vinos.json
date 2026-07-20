@@ -1,0 +1,57 @@
+{
+    "platforms": [
+        {
+            "id": "web",
+            "handler": "js/vinos-event-handler-web.js"
+        },
+        {
+            "id": "maker",
+            "handler": "js/vinos-event-handler-maker.js"
+        },
+        {
+            "id": "windows",
+            "handler": "js/vinos-event-handler-windows.js"
+        },
+        {
+            "id": "net",
+            "handler": "js/vinos-event-handler-net.js"
+        },
+        {
+            "id": "app",
+            "scripts": [ "../cordova.js", "../Insomnia.js", "../vinosloader.js" ],
+            "handler": "js/vinos-event-handler-app.js"
+        }
+    ],
+	"skins":[
+		{
+			"name":"Default",
+			"file":""
+		},
+		{
+			"name":"Violet",
+			"file":"skin/theme_violet.css"
+		},
+		{
+			"name":"Pink",
+			"file":"skin/theme_pink.css"
+		},
+		{
+			"name":"Green",
+			"file":"skin/theme_green.css"
+		}
+	],
+    "modifiers":[
+        {
+            "selector": "vinos-menu",
+            "class": "at-left slide-in"
+        },
+        { 
+            "selector": "vinos-history",
+            "class":"at-right slide-in border-white"
+        },
+        { 
+            "selector": "vinos-help",
+            "class":"at-right slide-in border-white"
+        }
+    ]
+}

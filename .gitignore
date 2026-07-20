@@ -1,0 +1,18 @@
+.DS_Store
+
+.idea
+coverage
+node_modules
+
+## Actual game files
+program/input/bgm
+program/input/effect
+program/input/image
+program/input/movie
+program/input/script
+program/input/sound
+program/input/voice
+program/output
+
+node-*
+nwjs-*

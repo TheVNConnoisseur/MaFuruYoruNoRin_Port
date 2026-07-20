@@ -14,7 +14,9 @@ await nwbuild({
     genericName: '魔降ル夜ノ凜 Animation',
     noDisplay: false,
     comment: '',
-    /* File path of icon from where it is copied. */
+    // File path of icon from where it is copied. Since Linux executables do not have icons embedded onto them, 
+    // this just copies directly this path for the executable created in the output folder, which in tandem means 
+    // the path defined here should be done from within the output folder
     icon: './icon.ico',
     hidden: false,
     // TODO: test in different Linux desktop environments

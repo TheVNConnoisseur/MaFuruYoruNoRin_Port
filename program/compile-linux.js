@@ -15,7 +15,7 @@ await nwbuild({
     noDisplay: false,
     comment: 'Tooltip information',
     /* File path of icon from where it is copied. */
-    icon: './program/input/icon.png',
+    icon: './icon.ico',
     hidden: false,
     // TODO: test in different Linux desktop environments
     // onlyShowIn: [],
@@ -23,6 +23,6 @@ await nwbuild({
     dBusActivatable: true,
     // TODO: test in Linux environment
     // tryExec: '/path/to/exe?'
-    exec: './program/input/output/linux/魔降ル夜ノ凜 Animation',
+    exec: '"./program/output/linux/魔降ル夜ノ凜 Animation"',
   }
 });

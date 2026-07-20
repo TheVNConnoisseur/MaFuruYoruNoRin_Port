@@ -1511,6 +1511,7 @@
                         return e.volume
                     },
                     _getFinalVolume: function(e, t) {
+                        //calculate the level of volume for each type of audio channel
                         switch (isNaN(t) && (t = 1), e) {
                             case this.DEFAULT_LAYERUSAGE_VD:
                                 return eTOYutil.fnRound(this.config.volumeMaster * t * this.config.volumeVideo, 2);
@@ -3750,11 +3751,23 @@
                         null !== i && i && this._loadVideoFile(i.options.source, i.options)
                     },
                     _loadVideoFile: function(e, t) {
-                        if (!1 === this.config.useAnim && !0 !== t.forcePlay) return null;
+                        //e: from t, the parameter source: movie/aev008b_r.ogv?v=1_0_0
+                        //t: the entire array of options for video playback
+                        // {
+                        // "index": 0,
+                        // "volume": 1,
+                        // "loop": true,
+                        // "play": true,
+                        // "forcePlay": false,
+                        // "name": "aev007d_r",
+                        // "source": "movie/aev007d_r.ogv?v=1_0_0",
+                        // "fullScreen": true
+                        // }
+                        if (!1 === this.config.useAnim && !0 !== t.forcePlay) return null;  //if the user has disabled video files (useAnim), and the option to forcePlay is not activated (it cannot be done through in-game), avoid this function entirely
                         this.runtime.video = e, this.runtime.videoIndex = t.index, this.runtime.videoReady = !1, this.runtime.videoPlay = !1;
-                        var i = this._getVideo(t.index);
-                        if (null === i) {
-                            if (null === (i = document.createElement("video"))) return this.logError("_loadVideoFile:Cannot create a video element"), null;
+                        var i = this._getVideo(t.index); //check if there's already a video object created in the requested index
+                        if (null === i) {   //there is no video element created
+                            if (null === (i = document.createElement("video"))) return this.logError("_loadVideoFile:Cannot create a video element"), null;     //weird edge-case where the browser fails to create a video html tag
                             this.logDebug("_loadVideoFile:create a video element"), i.onerror = this._onMediaError, i.onloadedmetadata = function() {
                                 0 < Vinos.runtime.video.length && (!0 === this.user.fullScreen && (this.style.width = "100%", this.style.height = "100%", Vinos._hideCanvas(), Vinos.app.stop()), this.style.display = "none", Vinos._onReadyVideo(this))
                             }, i.onended = function() {

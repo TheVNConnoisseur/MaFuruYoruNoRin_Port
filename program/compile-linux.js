@@ -13,7 +13,7 @@ await nwbuild({
     name: '魔降ル夜ノ凜 Animation',
     genericName: '魔降ル夜ノ凜 Animation',
     noDisplay: false,
-    comment: 'Tooltip information',
+    comment: '',
     /* File path of icon from where it is copied. */
     icon: './icon.ico',
     hidden: false,

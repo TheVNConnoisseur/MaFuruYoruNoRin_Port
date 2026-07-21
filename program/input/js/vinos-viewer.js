@@ -3767,17 +3767,15 @@
                         this.runtime.video = e, this.runtime.videoIndex = t.index, this.runtime.videoReady = !1, this.runtime.videoPlay = !1;
                         var i = this._getVideo(t.index); //check if there's already a video object created in the requested index
                         if (null === i) {   //there is no video element created
-                            if (null === (i = document.createElement("video"))) return this.logError("_loadVideoFile:Cannot create a video element"), null;     //weird edge-case where the browser fails to create a video html tag
+                            if (null === (i = new OGVPlayer({debug: true}))) return this.logError("_loadVideoFile:Cannot create a video element"), null;     //weird edge-case where the browser fails to create a video html tag
                             this.logDebug("_loadVideoFile:create a video element"), i.onerror = this._onMediaError, i.onloadedmetadata = function() {
                                 0 < Vinos.runtime.video.length && (!0 === this.user.fullScreen && (this.style.width = "100%", this.style.height = "100%", Vinos._hideCanvas(), Vinos.app.stop()), this.style.display = "none", Vinos._onReadyVideo(this))
-                            }, i.onended = function() {
+                            }, i.addEventListener('ended', function() {
                                 if ("boolean" != typeof this.loop && !0 === t.loop) return this.currentTime = 0, void this.play();
                                 this.user.loop || Vinos._onEndVideo(this)
-                            }, this.elements.viewport.appendChild(i)
+                            }), this.elements.viewport.appendChild(i)
                         }
-                        "boolean" == typeof i.loop && (i.loop = t.loop), i.innerHTML = "", i.volume = this._getFinalVolume(this.DEFAULT_LAYERUSAGE_VD, t.volume), i.setAttribute("id", this.DEFAULT_VIDEO_ID + "_" + t.index), i.classList.add("wv-video"), i.setAttribute("webkit-playsinline", ""), i.setAttribute("playsinline", "");
-                        var n = document.createElement("source");
-                        n.src = e, n.type = "video/mp4", i.appendChild(n);
+                        "boolean" == typeof i.loop && (i.loop = t.loop), i.volume = this._getFinalVolume(this.DEFAULT_LAYERUSAGE_VD, t.volume), i.setAttribute("id", this.DEFAULT_VIDEO_ID + "_" + t.index), i.classList.add("wv-video"), i.setAttribute("webkit-playsinline", ""), i.setAttribute("playsinline", "");
                         var r = {
                             type: "video",
                             name: t.name,
@@ -3790,6 +3788,8 @@
                             fullScreen: t.fullScreen
                         };
                         i.user = r, i.load();
+                        i.src = e;
+                        i.seekable = true;
                         var a = this._getLayout(this.DEFAULT_LAYERUSAGE_VD);
                         return null !== a && a.elements.push(r), i
                     },
@@ -3831,7 +3831,7 @@
                         return i
                     },
                     _playVideoFile: function(e) {
-                        this._hideCanvas(), e.style.display = "block", e.pause(), e.currentTime = 0, e.play(), this._showVideo(), this._onStartVideo(e)
+                        this._hideCanvas(), e.style.display = "block", e.pause(), e.play(), this._showVideo(), this._onStartVideo(e)
                     },
                     stopVideo: function(e) {
                         var t = {

@@ -2888,7 +2888,7 @@
                                 if (!t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                                 return !i || "object" != typeof i && "function" != typeof i ? t : i
                             }(this, (Backend.__proto__ || Object.getPrototypeOf(Backend)).call(this));
-                            return h.url = i, h.offset = u, h.length = d, h.cachever = l, h.loaded = !1, h.seekable = !1, h.headers = {}, h.eof = !1, h.bytesRead = 0, h.xhr = new XMLHttpRequest, h
+                            return h.url = i, h.offset = u, h.length = d, h.cachever = l, h.loaded = !1, h.seekable = !0, h.headers = {}, h.eof = !1, h.bytesRead = 0, h.xhr = new XMLHttpRequest, h
                         }
                         return function _inherits(t, i) {
                             if ("function" != typeof i && null !== i) throw new TypeError("Super expression must either be null or a function, not " + typeof i);

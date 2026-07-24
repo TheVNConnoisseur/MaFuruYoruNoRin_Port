@@ -17,14 +17,11 @@ await nwbuild({
     // File path of icon from where it is copied. Since Linux executables do not have icons embedded onto them, 
     // this just copies directly this path for the executable created in the output folder, which in tandem means 
     // the path defined here should be done from within the output folder
-    icon: './icon.ico',
+    icon: './icon.png',
     hidden: false,
-    // TODO: test in different Linux desktop environments
     // onlyShowIn: [],
     // notShowIn: [],
     dBusActivatable: true,
-    // TODO: test in Linux environment
-    // tryExec: '/path/to/exe?'
-    exec: '"./program/output/linux/魔降ル夜ノ凜 Animation"',
+    exec: './program/output/linux/"魔降ル夜ノ凜 Animation"',
   }
 });

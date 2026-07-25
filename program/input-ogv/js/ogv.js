@@ -1,4 +1,5 @@
 /*! For license information please see ogv.js.LICENSE.txt */
+/*! ogv.js - 1.9.0 */
 ! function webpackUniversalModuleDefinition(t, i) {
     "object" == typeof exports && "object" == typeof module ? module.exports = i() : "function" == typeof define && define.amd ? define([], i) : "object" == typeof exports ? exports.ogvjs = i() : t.ogvjs = i()
 }(globalThis, (function() {

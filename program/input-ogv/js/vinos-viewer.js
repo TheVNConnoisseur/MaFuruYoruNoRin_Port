@@ -1511,6 +1511,7 @@
                         return e.volume
                     },
                     _getFinalVolume: function(e, t) {
+                        //calculate the level of volume for each type of audio channel
                         switch (isNaN(t) && (t = 1), e) {
                             case this.DEFAULT_LAYERUSAGE_VD:
                                 return eTOYutil.fnRound(this.config.volumeMaster * t * this.config.volumeVideo, 2);
@@ -3754,17 +3755,15 @@
                         this.runtime.video = e, this.runtime.videoIndex = t.index, this.runtime.videoReady = !1, this.runtime.videoPlay = !1;
                         var i = this._getVideo(t.index);
                         if (null === i) {
-                            if (null === (i = document.createElement("video"))) return this.logError("_loadVideoFile:Cannot create a video element"), null;
+                            if (null === (i = new OGVPlayer({debug: true}))) return this.logError("_loadVideoFile:Cannot create a video element"), null;
                             this.logDebug("_loadVideoFile:create a video element"), i.onerror = this._onMediaError, i.onloadedmetadata = function() {
                                 0 < Vinos.runtime.video.length && (!0 === this.user.fullScreen && (this.style.width = "100%", this.style.height = "100%", Vinos._hideCanvas(), Vinos.app.stop()), this.style.display = "none", Vinos._onReadyVideo(this))
-                            }, i.onended = function() {
-                                if ("boolean" != typeof this.loop && !0 === t.loop) return this.currentTime = 0, void this.play();
+                            }, i.addEventListener("ended", function() {
+                                if (t.loop) return this.currentTime = 0, void this.play();
                                 this.user.loop || Vinos._onEndVideo(this)
-                            }, this.elements.viewport.appendChild(i)
+                            }), this.elements.viewport.appendChild(i)
                         }
-                        "boolean" == typeof i.loop && (i.loop = t.loop), i.innerHTML = "", i.volume = this._getFinalVolume(this.DEFAULT_LAYERUSAGE_VD, t.volume), i.setAttribute("id", this.DEFAULT_VIDEO_ID + "_" + t.index), i.classList.add("wv-video"), i.setAttribute("webkit-playsinline", ""), i.setAttribute("playsinline", "");
-                        var n = document.createElement("source");
-                        n.src = e, n.type = "video/mp4", i.appendChild(n);
+                        "boolean" == typeof i.loop && (i.loop = t.loop), i.volume = this._getFinalVolume(this.DEFAULT_LAYERUSAGE_VD, t.volume), i.setAttribute("id", this.DEFAULT_VIDEO_ID + "_" + t.index), i.classList.add("wv-video"), i.setAttribute("webkit-playsinline", ""), i.setAttribute("playsinline", "");
                         var r = {
                             type: "video",
                             name: t.name,
@@ -3777,6 +3776,8 @@
                             fullScreen: t.fullScreen
                         };
                         i.user = r, i.load();
+                        i.src = e;
+                        i.seekable = true;
                         var a = this._getLayout(this.DEFAULT_LAYERUSAGE_VD);
                         return null !== a && a.elements.push(r), i
                     },
@@ -3818,7 +3819,7 @@
                         return i
                     },
                     _playVideoFile: function(e) {
-                        this._hideCanvas(), e.style.display = "block", e.pause(), e.currentTime = 0, e.play(), this._showVideo(), this._onStartVideo(e)
+                        this._hideCanvas(), e.style.display = "block", e.pause(), e.play(), this._showVideo(), this._onStartVideo(e)
                     },
                     stopVideo: function(e) {
                         var t = {

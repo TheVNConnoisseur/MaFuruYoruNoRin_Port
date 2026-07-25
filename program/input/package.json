@@ -4,5 +4,6 @@
   "version": "1.0.0",
   "window": {
     "icon": "./icon.png"
-  }
+  },
+  "chromium-args": "--user-data-dir=./package.nw/save"
 }

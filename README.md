@@ -33,6 +33,15 @@ What got changed from the original code of said library is in **bold**.
 | ogv.js | return h.url = i, h.offset = u, h.length = d, h.cachever = l, h.loaded = !1, h.seekable = !**0**, h.headers = {}, h.eof = !1, h.bytesRead = 0, h.xhr = new XMLHttpRequest, h | Because of the file being completely transfered in one go, the library assumes that the file is not seekable, and thus, this parameter never gets set to true. To ensure proper looping, this value gets set to true before the creation of the video stream. |
 | ogv-demuxer-ogg-wasm.js | p = **false** | The game runs inside a Chromium instance, but for some reason the environment exposes a process object, making the Emscripten-generated load think that it's running under Node.js, so it assumes that the value __dirname exists (it only does with CommonJS modules). |
 
+
+### Original files
+
+It is important to note that these files are taken from the `Player.pkg` file.
+
+| File name | Code | Comments |
+| :--- | :---: | :---: |
+| vinos-event-handler-web.js | onExit : function() | The old version of CefSharp used the same function but from `vinos-event-handler-app.js`, which has this functionality implemented, while for the web version not. This allows for the game to shut down using the native button in-game. |
+
 ## Building
 
 **1.** Clone the repository (or download)

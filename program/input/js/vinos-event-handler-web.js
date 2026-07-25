@@ -9,6 +9,11 @@
         },
 
         onExit : function() {
+            if (typeof nw !== "undefined") {
+                nw.Window.get().close(true);
+                return;
+            }
+            window.close();
         },
 
         _requestFullScreen : false,

@@ -7,7 +7,6 @@ The aim of this project is to modernize to the best extent the framework of this
 
 ## Roadmap
 
-- [ ] Mobile native port (NW.JS still has [no native Android/iOS support](https://github.com/Elanis/web-to-desktop-framework-comparison/#operating-systems-support))
 - [X] Obtain the non-minified version of all JS libraries
 - [X] Store cookies in a folder next to the game files (the game uses a cookie inside LocalStorage to keep track of all the unlocked scenes and each of the save states)
 - [X] Video playback support for [.ogv video files](https://en.wikipedia.org/wiki/Theora)
@@ -17,7 +16,7 @@ The aim of this project is to modernize to the best extent the framework of this
 | | Original | New | Comments |
 | :--- | :---: | :---: | :---: |
 | **Files encryption** | [MadMilkman.Ini](https://github.com/MarioZ/MadMilkman.Ini) | - | The original resources can be decrypted through this [tool](https://github.com/TheVNConnoisseur/MadMilkMan.Ini_Decrypter) |
-| **Framework** | [CefSharp](https://cefsharp.github.io/) | [NW.JS](https://nwjs.io/) | Built using [nw-builder](https://github.com/nwutils/nw-builder/) |
+| **Framework** | [CefSharp](https://cefsharp.github.io/) | [NW.js](https://nwjs.io/) | Built using [nw-builder](https://github.com/nwutils/nw-builder/) |
 | **Video files** | .ogv files played natively | .ogv files played through [ogv.js](https://github.com/bvibber/ogv.js) | Official support in Chromium [got dropped](https://chromestatus.com/feature/5158654475239424). Sadly, due to this library still [not supporting proper looping](https://github.com/bvibber/ogv.js/blob/3e7cbd3d0b0274b11191cb2e1bed0186f8661f84/src/js/OGVPlayer.js#L561), a version with the files being converted to a supported format natively is recommended.  |
 | **JS and CSS files** | Most are minified | Beautified or official development versions | While not necessary, this helps to keep the games to be ported to newer libraries |
 
@@ -45,10 +44,8 @@ It is important to note that these files are taken from the `Player.pkg` file.
 ## Building
 
 **1.** Clone the repository (or download)
-   ```
-   git clone https://github.com/TheVNConnoisseur/MaFuruYoruNoRin_Port.git
-   ```
-**2.** Install Node.JS and npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
+**2.** Install Node.js and npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 **3.** Open a terminal session and make its working directory to be _the folder that holds the repository_
 

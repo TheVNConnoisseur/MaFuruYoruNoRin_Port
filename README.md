@@ -1,4 +1,4 @@
-# Ma Furu Yoru no Rin
+# Ma Furu Yoru no Rin (PC)
 
 The game was designed originally to be played with **CefSharp**, based specifically on a build made for [Chromium 73.0.3683.75](https://chromium.googlesource.com/chromium/src/+/73.0.3683.75), according to the README file included on the game.
 That means that while the game can be run on a simple HTTP server, the developers decided to use a framework that is only compatible with Windows, not allowing other devices to play with it.

@@ -19,7 +19,7 @@ It is important to note that these files are taken from the `Player.pkg` file.
 | File name | Comments |
 | :---: | :---: |
 | skin.css | Since there is no way to resize the buttons to choose what submenu of the configuration tab is currently selected, those had to be made smaller and realigned vertically. Also, the close and reset configuration menu have been readjusted horizontally to be clickable. |
-| title.html | In Android the more "correct" way of closing an application is by the user getting out of it, and shutting it down, rendering the close button in-game useless. Thus, the close button in the main menu has been removed. |
+| title.html | In Android the more "correct" way of closing an application is by the user getting out of it, and shutting it down, rendering the close button in-game useless. Thus, the close button in the main menu has been removed. Also, all references to the other main menu buttons were removed that need an active internet connection. |
 
 ## Building
 

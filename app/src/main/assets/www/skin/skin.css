@@ -335,28 +335,6 @@
 	.vinos-player .wv-ui-link.wv-ui-link-9:active {background-image: url('./img/bt_exdiary_sel.png');}
 	�����܂�*/
 
-.vinos-player .wv-ui-link.wv-ui-link-10 {
-	/*background-image: url('./img/bt_website_normal.png');*/
-    background-image: url('./img/bt_website.png');
-    background-size: 100% 200%;
-    background-position: top;
-	}
-.vinos-player .wv-ui-link.wv-ui-link-10:active {
-	background-position: bottom;
-	/*background-image: url('./img/bt_website_sel.png');*/
-	}
-
-.vinos-player .wv-ui-link.wv-ui-link-11 {
-	/*background-image: url('./img/bt_present_normal.png');*/
-    background-image: url('./img/bt_present.png');
-    background-size: 100% 200%;
-    background-position: top;
-	}
-.vinos-player .wv-ui-link.wv-ui-link-11:active {
-	background-position: bottom;
-	/*background-image: url('./img/bt_present_sel.png');*/
-	}
-
 .vinos-player .wv-ui-link.wv-ui-link-12:active,
 .vinos-player .wv-ui-link.wv-ui-link-13:active { color : lightblue; }
 
@@ -2207,14 +2185,6 @@
     .vinos-player .wv-ui-link.wv-ui-link-6:hover {
     	background-position: bottom;
     	/*background-image: url('./img/bt_gallery_sel.png');*/
-    }
-    .vinos-player .wv-ui-link.wv-ui-link-10:hover {
-    	background-position: bottom;
-    	/*background-image: url('./img/bt_website_sel.png');*/
-	}
-    .vinos-player .wv-ui-link.wv-ui-link-11:hover {
-    background-position: bottom;
-    /*background-image: url('./img/bt_present_sel.png'); */
     }
 
     .vinos-player .wv-ui-link.wv-ui-link-12:hover,
